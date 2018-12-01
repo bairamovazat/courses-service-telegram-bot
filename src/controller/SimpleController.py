@@ -112,7 +112,7 @@ class SimpleController(AbstractController):
         if user is None:
             bot.send_message(
                 chat_id=update.message.chat_id,
-                text=unregistered_message
+                text=SimpleController.unregistered_message
             )
 
         else:
