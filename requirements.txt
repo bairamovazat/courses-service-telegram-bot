@@ -1,3 +1,1 @@
-python ./src/main.py
-telegram
 python-telegram-bot
