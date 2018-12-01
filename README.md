@@ -16,16 +16,16 @@
 Макеты для браузерной версии (приблизительные):
 
 Страница входа:
-![Login page](design/Login page.png)
+![Login page](design/Login&#32page.png)
 
 Выбор курса (для студента и преподавтеля):
-![studSelect](design/SelectCourse Student.png)          ![teachSelect](design/SelectCourse Teacher.png)
+![studSelect](design/SelectCourse&#32Student.png)          ![teachSelect](design/SelectCourse&#32Teacher.png)
 
 Страница курса (для студента):
-![CourseMenuStud](design/Course main menu for student.png)
+![CourseMenuStud](design/Course&#32main&#32menu&#32for&#32student.png)
 
 Страница задания с курса (для студента):
-![TaskStud](design/Course Task.png)
+![TaskStud](design/Course&#32Task.png)
 
 Страница центра контроля успеваемости (для студента):
-![EdContrStud](design/Education control center.png)
+![EdContrStud](design/Education&#32control&#32center.png)
