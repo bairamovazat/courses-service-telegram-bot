@@ -12,3 +12,21 @@
 
 Модель базы данных
 ![alt text](resources/database.png)
+
+Макеты для браузерной версии (приблизительные):
+![alt text](design/designWeb.psd)
+
+Страница входа:
+![alt text](design/Login page.png)
+
+Выбор курса (для студента и преподавтеля):
+![alt text](design/SelectCourse Student.png)          ![alt text](design/SelectCourse Teacher.png)
+
+Страница курса (для студента):
+![alt text](design/Course main menu for student.png)
+
+Страница задания с курса (для студента):
+![alt text](design/Course Task.png)
+
+Страница центра контроля успеваемости (для студента):
+![alt text](design/Education control center.png)
