@@ -1,5 +1,8 @@
 #Базовая демонстрация телеграм бота без сервиса.
 
+* ##Серверная часть:
+	* https://bitbucket.org/azatbairamov/courses-service/src/master/
+
 * ##В планах:
     * Реализовать REST-сервис хранения и обработки данных
     * Реализовать Telegram bot для доступа к сервису
@@ -10,22 +13,29 @@
     * Базовый функционал Telegram bot для демонстрации
     * Базовый "каркас" REST-сервиса (Spring, Hibernate, PostgresSQL)
 
+* ######Участники:
+	* Байрамов Азат
+	* Лигай Вячеслав
+	* Тахаутдинов Камиль
+	* Рыжов Егор
+	* Низамутдинов Ильгиз
+
 Модель базы данных
 ![alt text](resources/database.png)
 
 Макеты для браузерной версии (приблизительные):
 
 Страница входа:
-![Login page](design/Login&#32page.png)
+![Login page](design/LoginPage.png)
 
 Выбор курса (для студента и преподавтеля):
-![studSelect](design/SelectCourse&#32Student.png)          ![teachSelect](design/SelectCourse&#32Teacher.png)
+![studSelect](design/SelectCourseStudent.png)          ![teachSelect](design/SelectCourseTeacher.png)
 
 Страница курса (для студента):
-![CourseMenuStud](design/Course&#32main&#32menu&#32for&#32student.png)
+![CourseMenuStud](design/CourseMainMenuForStudent.png)
 
 Страница задания с курса (для студента):
-![TaskStud](design/Course&#32Task.png)
+![TaskStud](design/CourseTask.png)
 
 Страница центра контроля успеваемости (для студента):
-![EdContrStud](design/Education&#32control&#32center.png)
+![EdContrStud](design/EducationControlCenter.png)
