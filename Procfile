@@ -1,1 +1,1 @@
-web: python src/main.py 5000
+web: gunicorn backend.backend.wsgi
