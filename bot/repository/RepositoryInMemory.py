@@ -1,8 +1,8 @@
 from typing import List, Any
 
-from src.model.AbstractUser import AbstractUser
-from src.model.SimpleUser import SimpleUser
-from src.repository.AbstractRepository import AbstractRepository
+from bot.model.AbstractUser import AbstractUser
+from bot.model.SimpleUser import SimpleUser
+from bot.repository.AbstractRepository import AbstractRepository
 
 
 class RepositoryInMemory(AbstractRepository):
