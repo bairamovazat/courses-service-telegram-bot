@@ -1,6 +1,6 @@
 from typing import List
 
-from src.model.AbstractUser import AbstractUser
+from bot.model.AbstractUser import AbstractUser
 
 
 class SimpleUser(AbstractUser):

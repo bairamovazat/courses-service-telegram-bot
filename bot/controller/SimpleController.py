@@ -1,10 +1,9 @@
-from typing import Dict, Callable
 
 from telegram import Bot, Update, User
 
-from src.controller.AbstractController import AbstractController
-from src.model.SimpleUser import SimpleUser
-from src.repository.RepositoryInMemory import RepositoryInMemory
+from bot.controller.AbstractController import AbstractController
+from bot.model.SimpleUser import SimpleUser
+from bot.repository.RepositoryInMemory import RepositoryInMemory
 
 
 def is_number(s):
@@ -138,7 +137,7 @@ class SimpleController(AbstractController):
         if user is None:
             bot.send_message(
                 chat_id=update.message.chat_id,
-                text=unregistered_message
+                text=SimpleController.unregistered_message
             )
         else:
             bot.send_message(
