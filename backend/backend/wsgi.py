@@ -11,7 +11,7 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-from backend.bot.main import start_bot
+from bot.main import start_bot
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "backend.settings")
 
