@@ -11,10 +11,10 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -26,7 +26,6 @@ SECRET_KEY = '*&w8g=3tn=38qcyc-&!_%nif-hm&t*az!%#8)woz_px9mf^20e'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -70,22 +69,21 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'backend.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
-    'default':
-        {'ENGINE': 'django.db.backends.postgresql_psycopg2',
-         'NAME': 'courses-service',
-         'USER': 'postgres',  # Not used with sqlite3.
-         'PASSWORD': '111111',  # Not used with sqlite3.
-         'HOST': 'localhost',
-         # Set to empty string for localhost. Not used with sqlite3.
-         'PORT': '5432',  # Set to empty string for default. Not used with sqlite3.
-         }
+    'default': {'ENGINE': 'django.db.backends.sqlite3'}
+    # 'default':
+    #     {'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #      'NAME': 'courses-service',
+    #      'USER': 'postgres',  # Not used with sqlite3.
+    #      'PASSWORD': '111111',  # Not used with sqlite3.
+    #      'HOST': 'localhost',
+    #      # Set to empty string for localhost. Not used with sqlite3.
+    #      'PORT': '5432',  # Set to empty string for default. Not used with sqlite3.
+    #      }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -105,7 +103,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
@@ -119,10 +116,11 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/resources/'
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(PROJECT_DIR, 'resources')
+
+django_heroku.settings(locals())
