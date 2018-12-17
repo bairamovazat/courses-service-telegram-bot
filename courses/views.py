@@ -1,10 +1,12 @@
-from django.contrib.sites import requests
 from django.http import HttpResponse
-from django.shortcuts import render
+from bot.main import BootStarter
 
+botStarter = BootStarter()
+botStarter.start_bot()
 
-# Create your views here.
 
 def index(request):
+    if not botStarter.is_run():
+        botStarter.start_bot()
     return HttpResponse("Привет! Сейчас сервис запущен и ты можешь написать боту <a "
                         "href='https://t.me/courses_service_bot'>https://t.me/courses_service_bot</a>")
