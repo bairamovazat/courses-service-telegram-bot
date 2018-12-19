@@ -11,7 +11,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 token = "622712955:AAGGQ_k9Grd_eY-3onHLfshbAodUFH-2MgU"
 
 
-class BootStarter:
+class BotStarter:
     def __init__(self):
         self.bot = None
 
@@ -32,5 +32,5 @@ class BootStarter:
 
 
 if __name__ == "__main__":
-    botStarter = BootStarter()
+    botStarter = BotStarter()
     botStarter.start_bot()
