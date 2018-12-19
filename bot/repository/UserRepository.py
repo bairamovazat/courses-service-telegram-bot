@@ -2,6 +2,7 @@ from typing import List, Any
 
 from django.core.exceptions import ObjectDoesNotExist
 
+
 from courses.models import User
 
 
