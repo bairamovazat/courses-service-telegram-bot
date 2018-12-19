@@ -9,6 +9,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 
 token = "622712955:AAGGQ_k9Grd_eY-3onHLfshbAodUFH-2MgU"
 
+bot = None
 
 class BotStarter:
     def __init__(self):

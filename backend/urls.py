@@ -18,11 +18,6 @@ from django.contrib import admin
 from django.conf.urls import include
 from django.views.generic import RedirectView
 
-from bot.main import BotStarter
-
-botStarter = BotStarter()
-botStarter.start_bot()
-
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 ]
