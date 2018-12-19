@@ -5,6 +5,7 @@ from typing import Dict
 
 import telegram
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+from telegram.utils.request import Request
 
 
 class TelegramBot:
@@ -12,10 +13,9 @@ class TelegramBot:
     def __init__(self, token):
         # 170717443 - @bairamov_azat id
         self.token = token
-        self.bot = telegram.Bot(token=self.token)
+        self.bot = telegram.Bot(token=self.token, request=Request(con_pool_size=8))
         self.updater = Updater(bot=self.bot)
         self.dispatcher = self.updater.dispatcher
-        # self.init_handler()
 
     def init_handler(self):
         self.bot.send_message(
@@ -44,3 +44,4 @@ class TelegramBot:
 
         self.updater.bot.setWebhook("https://courses-service-telegram-bot.herokuapp.com/" + self.token)
         self.updater.idle()
+        self.init_handler()
