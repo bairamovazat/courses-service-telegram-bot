@@ -45,7 +45,6 @@ class TelegramBot:
         self.updater.idle()
         self.init_handler()
 
-
     def start_polling_local(self):
         self.updater.start_polling()
         self.init_handler()

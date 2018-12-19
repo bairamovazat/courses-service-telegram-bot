@@ -1,4 +1,5 @@
 import os
+import time
 
 from bot.controller.SimpleController import SimpleController
 from bot.repository.UserRepository import UserRepository
@@ -19,7 +20,7 @@ class BotStarter:
         repository = UserRepository()
         controller = SimpleController(repository)
         self.bot = TelegramBot(token=token)
-        logging.log(level=logging.INFO, msg="End bot")
+        logging.log(level=logging.INFO, msg="Start bot")
         self.bot.load_command_handlers(controller.get_handlers())
         # HEROKU
         self.bot.start_polling()
@@ -33,4 +34,6 @@ class BotStarter:
 
 if __name__ == "__main__":
     botStarter = BotStarter()
+    #Ожидание, пока джанго развернётся
+    time.sleep(20)
     botStarter.start_bot()
