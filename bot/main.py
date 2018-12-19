@@ -22,9 +22,9 @@ class BotStarter:
         logging.log(level=logging.INFO, msg="Start bot")
         self.bot.load_command_handlers(controller.get_handlers())
         # HEROKU
-        self.bot.start_polling()
+        # self.bot.start_polling()
         # LOCAL
-        # self.bot.start_polling_local()
+        self.bot.start_polling_local()
         return self.bot
 
     def is_run(self):
