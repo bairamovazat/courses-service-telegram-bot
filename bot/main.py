@@ -1,5 +1,3 @@
-import os
-import time
 
 from bot.controller.SimpleController import SimpleController
 from bot.repository.UserRepository import UserRepository
@@ -35,5 +33,4 @@ class BotStarter:
 if __name__ == "__main__":
     botStarter = BotStarter()
     #Ожидание, пока джанго развернётся
-    time.sleep(20)
     botStarter.start_bot()
