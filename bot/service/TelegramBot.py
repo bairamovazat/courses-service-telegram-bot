@@ -41,7 +41,6 @@ class TelegramBot:
         self.updater.start_webhook(listen="0.0.0.0",
                                    port=int(os.environ.get('PORT', '8443')),
                                    url_path=self.token)
-
         self.updater.bot.setWebhook("https://courses-service-telegram-bot.herokuapp.com/" + self.token)
         self.updater.idle()
         self.init_handler()
