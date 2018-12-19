@@ -15,12 +15,6 @@ class TelegramBot:
         self.bot = telegram.Bot(token=self.token)
         self.updater = Updater(bot=self.bot)
         self.dispatcher = self.updater.dispatcher
-        self.updater.start_webhook(listen="0.0.0.0",
-                                   port=int(os.environ.get('PORT', '8443')),
-                                   url_path=token)
-
-        self.updater.bot.setWebhook("https://courses-service-telegram-bot.herokuapp.com/" + token)
-        self.updater.idle()
         # self.init_handler()
 
     def init_handler(self):
@@ -44,4 +38,9 @@ class TelegramBot:
         self.dispatcher.add_handler(MessageHandler(Filters.text, handler))
 
     def start_polling(self):
-        self.updater.start_polling()
+        self.updater.start_webhook(listen="0.0.0.0",
+                                   port=int(os.environ.get('PORT', '8443')),
+                                   url_path=self.token)
+
+        self.updater.bot.setWebhook("https://courses-service-telegram-bot.herokuapp.com/" + self.token)
+        self.updater.idle()

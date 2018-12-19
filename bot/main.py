@@ -19,7 +19,7 @@ class BootStarter:
         repository = RepositoryInMemory()
         controller = SimpleController(repository)
         self.bot = TelegramBot(token=token)
-        logging.log(level=logging.INFO, msg="End bot")
+        logging.log(level=logging.INFO, msg="Start bot")
         self.bot.load_command_handlers(controller.get_handlers())
         self.bot.start_polling()
         return self.bot
