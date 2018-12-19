@@ -16,13 +16,13 @@ class TelegramBot:
         self.updater = Updater(bot=self.bot)
         self.dispatcher = self.updater.dispatcher
 
-        # self.updater.start_webhook(listen="0.0.0.0",
-        #                            port=int(os.environ.get('PORT', '5000')),
-        #                            url_path=token)
-        #
-        # self.updater.bot.setWebhook("https://courses-service-telegram-bot.herokuapp.com/" + token)
-        # self.updater.idle()
-        self.init_handler()
+        self.updater.start_webhook(listen="0.0.0.0",
+                                   port=int(os.environ.get('PORT', '5000')),
+                                   url_path=token)
+
+        self.updater.bot.setWebhook("https://courses-service-telegram-bot.herokuapp.com/" + token)
+        self.updater.idle()
+        # self.init_handler()
 
     def init_handler(self):
         self.bot.send_message(

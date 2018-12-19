@@ -4,6 +4,9 @@ from bot.main import BootStarter
 botStarter = BootStarter()
 botStarter.start_bot()
 
+if not botStarter.is_run():
+    botStarter.start_bot()
+
 
 def index(request):
     if not botStarter.is_run():
