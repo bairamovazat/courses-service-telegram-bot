@@ -1,9 +1,6 @@
-from django.contrib.sites import requests
 from django.http import HttpResponse
-from django.shortcuts import render
+from bot.main import BootStarter
 
-
-# Create your views here.
 
 def index(request):
     return HttpResponse("Привет! Сейчас сервис запущен и ты можешь написать боту <a "

@@ -11,14 +11,24 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 token = "622712955:AAGGQ_k9Grd_eY-3onHLfshbAodUFH-2MgU"
 
 
-def start_bot():
-    repository = RepositoryInMemory()
-    controller = SimpleController(repository)
-    bot = TelegramBot(token=token)
-    logging.log(level=logging.INFO, msg="End bot")
-    bot.load_command_handlers(controller.get_handlers())
-    bot.start_polling()
+class BootStarter:
+    def __init__(self):
+        bot = None
+
+    def start_bot(self) -> TelegramBot:
+        repository = RepositoryInMemory()
+        controller = SimpleController(repository)
+        self.bot = TelegramBot(token=token)
+        logging.log(level=logging.INFO, msg="End bot")
+        self.bot.load_command_handlers(controller.get_handlers())
+        self.bot.start_polling()
+        return self.bot
+
+    def is_run(self):
+        return self.bot is not None
 
 
 if __name__ == "__main__":
-    start_bot()
+    logging.info("Run main bot method");
+    botStarter = BootStarter()
+    botStarter.start_bot()
