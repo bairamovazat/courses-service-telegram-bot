@@ -1,9 +1,5 @@
 from django.http import HttpResponse
 
-from bot.main import BotStarter
-
-botStarter = BotStarter()
-botStarter.start_bot()
 
 def index(request):
     return HttpResponse(
