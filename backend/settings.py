@@ -79,19 +79,19 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 #LOCAL
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': 'courses-service',
-    # }
-    'default':
-        {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'dqfl2m97ikk31',
-            'USER': 'yeynkmzfbggnjk',  # Not used with sqlite3.
-            'PASSWORD': '7248215a26b5e9797cd014658f5a5a85256b71c1b1483ec5e293a93b77f7cb1c',  # Not used with sqlite3.
-            'HOST': 'ec2-54-243-238-46.compute-1.amazonaws.com',
-            'PORT': '5432',  # Set to empty string for default. Not used with sqlite3.
-         }
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'courses-service',
+    }
+    # 'default':
+    #     {
+    #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #         'NAME': 'dqfl2m97ikk31',
+    #         'USER': 'yeynkmzfbggnjk',  # Not used with sqlite3.
+    #         'PASSWORD': '7248215a26b5e9797cd014658f5a5a85256b71c1b1483ec5e293a93b77f7cb1c',  # Not used with sqlite3.
+    #         'HOST': 'ec2-54-243-238-46.compute-1.amazonaws.com',
+    #         'PORT': '5432',  # Set to empty string for default. Not used with sqlite3.
+    #      }
 }
 
 db_from_env = dj_database_url.config()
