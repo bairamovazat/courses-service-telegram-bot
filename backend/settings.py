@@ -93,9 +93,9 @@ DATABASES = {
     #         'PORT': '5432',  # Set to empty string for default. Not used with sqlite3.
     #      }
 }
-
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
+#
+# db_from_env = dj_database_url.config()
+# DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
