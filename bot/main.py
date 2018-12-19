@@ -31,6 +31,6 @@ class BotStarter:
         return self.bot is not None
 
 
-# if __name__ == "__main__":
-#     botStarter = BotStarter()
-#     botStarter.start_bot()
+if __name__ == "__main__":
+    botStarter = BotStarter()
+    botStarter.start_bot()
