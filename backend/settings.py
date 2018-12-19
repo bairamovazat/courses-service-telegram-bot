@@ -75,25 +75,25 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'courses-service',
-    }
-    # 'default':
-    #     {'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    #      'NAME': 'courses-service',
-    #      'USER': 'postgres',  # Not used with sqlite3.
-    #      'PASSWORD': '111111',  # Not used with sqlite3.
-    #      'HOST': 'localhost',
-    #      # Set to empty string for localhost. Not used with sqlite3.
-    #      'PORT': '5432',  # Set to empty string for default. Not used with sqlite3.
-    #      }
-}
+#HEROKU
+DATABASES = {'default': dj_database_url.config(conn_max_age=600, ssl_require=True)}
 
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
-
+#LOCAL
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': 'courses-service',
+#     }
+#     # 'default':
+#     #     {'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#     #      'NAME': 'courses-service',
+#     #      'USER': 'postgres',  # Not used with sqlite3.
+#     #      'PASSWORD': '111111',  # Not used with sqlite3.
+#     #      'HOST': 'localhost',
+#     #      # Set to empty string for localhost. Not used with sqlite3.
+#     #      'PORT': '5432',  # Set to empty string for default. Not used with sqlite3.
+#     #      }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators

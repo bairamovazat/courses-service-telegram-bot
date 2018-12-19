@@ -1,9 +1,7 @@
-
 from telegram import Bot, Update, User
-
 from bot.controller.AbstractController import AbstractController
-from bot.model.SimpleUser import SimpleUser
-from bot.repository.RepositoryInMemory import RepositoryInMemory
+from bot.repository.UserRepository import UserRepository
+from courses import models
 
 
 def is_number(s):
@@ -35,7 +33,7 @@ class SimpleController(AbstractController):
 
     unregistered_message = "Вы не зарегистрированы. Чтобы зарегистрироваться введите /register 'номерЗачётки'"
 
-    def __init__(self, repository: RepositoryInMemory):
+    def __init__(self, userRepository: UserRepository):
         self.handlers = {
             "start": self.start_controller,
             "register": self.register_controller,
@@ -43,13 +41,12 @@ class SimpleController(AbstractController):
             "commands": self.commands_controller,
             "profile": self.profile_controller,
         }
-        self.repository = repository
+        self.userRepository = userRepository
 
     def get_user_by_update(self, telegram_user: User):
         if telegram_user is None or telegram_user.id is None:
             return None
-
-        return self.repository.get_user_by_telegram_id(telegram_user.id)
+        return self.userRepository.get_by_telegram_id(telegram_user.id)
 
     def get_handlers(self):
         return self.handlers
@@ -90,8 +87,12 @@ class SimpleController(AbstractController):
                 )
                 return
 
-            new_user = SimpleUser(card_number=number, telegram_id=telegram_user.id)
-            self.repository.create_user(new_user)
+            new_user = models.User()
+            new_user.rec_book_number = number
+            new_user.telegram_id = telegram_user.id
+            new_user.is_teacher = False
+            new_user.confirm = True
+            self.userRepository.save(new_user)
 
             bot.send_message(
                 chat_id=update.message.chat_id,
@@ -123,7 +124,7 @@ class SimpleController(AbstractController):
                          "Номер зачётки можно узнать через /profile"
                 )
                 return
-            self.repository.delete_user(user)
+            self.userRepository.delete(user)
 
             bot.send_message(
                 chat_id=update.message.chat_id,
@@ -148,7 +149,7 @@ class SimpleController(AbstractController):
                      "Имя: Скоро будет\n"
                      "Фамилия: Скоро будет\n"
                      "Группа: Скоро будет\n"
-                    .format(user.card_number)
+                    .format(user.rec_book_number)
             )
 
     def commands_controller(self, bot: Bot, update: Update):
